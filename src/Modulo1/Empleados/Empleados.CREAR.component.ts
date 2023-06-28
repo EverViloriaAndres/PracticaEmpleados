@@ -11,6 +11,9 @@ export class creaEmpleados {
     this.sueldo = sueldo;
   }
 
+  public getNombre(): string {
+    return this.nombre;
+  }
   public get(campo: string): any {
     switch (campo) {
       case 'nombre':

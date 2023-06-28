@@ -35,3 +35,8 @@ form .inputs {
   background-color: #0d6efd;
   color: white;
 }
+
+p {
+  text-align: center;
+  font-size: small;
+}

@@ -1,0 +1,7 @@
+/*Clase que se le agrega a las etiquetas con ngClass de angular*/
+.presidente {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  font-weight: 600;
+  text-shadow: black 0.5px 0.5px 1px;
+}

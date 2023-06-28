@@ -1,0 +1,6 @@
+<li>
+  {{ items.get('nombre') }}&nbsp; {{items.get('apellido')}}&nbsp;
+  <span [ngClass]="{presidente:items.get('cargo')=='Presidente'}"
+    >{{items.get('cargo')}}</span
+  >&nbsp; ${{items.get('sueldo')}}
+</li>

@@ -14,6 +14,7 @@ export class ComponentePrincipal {
   protected numEmpleados: number = 4;
 
   protected Empleados: creaEmpleados[] = [
+    new creaEmpleados('Prueba', 'Prueba', 'Prueba', 5758250),
     new creaEmpleados('Ever', 'Viloria', 'Presidente', 5758250),
     new creaEmpleados('Erick', 'Viloria', 'Gerente', 5758250),
     new creaEmpleados('Jesus', 'Viloria', 'Super Visor', 5758250),
