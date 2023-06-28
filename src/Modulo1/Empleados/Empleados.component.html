@@ -4,7 +4,12 @@
 <div class="container2">
   <ul>
     <!--Se envia a otro componente el items, alla se resive con  @Input-->
-    <Hijo *ngFor="let item of Empleados" [items]="item" id="Hijo"></Hijo>
+    <Hijo
+      *ngFor="let item of Empleados"
+      [items]="item"
+      id="Hijo"
+      (EventoEmisor)="setEviomiHijo($event)"
+    ></Hijo>
   </ul>
   <form action="#">
     <div class="inputs">
@@ -38,4 +43,6 @@
     <p *ngIf="numEmpleados > 9; else elElse">Numero de empleados al maximo</p>
     <ng-template #elElse>Cupos Disponibles</ng-template>
   </form>
+
+  <p>Esta mensaje fue enviado por mi hijo: {{ envioMiHijo }}</p>
 </div>

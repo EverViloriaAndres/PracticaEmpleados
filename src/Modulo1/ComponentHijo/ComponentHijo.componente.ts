@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { creaEmpleados } from '../Empleados/Empleados.CREAR.component';
 
 @Component({
@@ -8,4 +8,10 @@ import { creaEmpleados } from '../Empleados/Empleados.CREAR.component';
 })
 export class ComponentHijo {
   @Input() items: creaEmpleados;
+  @Output() EventoEmisor = new EventEmitter<string>();
+  private eviado: string = 'ESTO SE LO ENVIO A MI PADRE';
+
+  enviaAlPadre() {
+    this.EventoEmisor.emit(this.eviado);
+  }
 }

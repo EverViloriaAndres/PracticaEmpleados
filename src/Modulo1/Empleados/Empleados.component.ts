@@ -12,6 +12,11 @@ export class ComponentePrincipal {
   protected cargo: string = '';
   protected sueldo: number = 0;
   protected numEmpleados: number = 4;
+  envioMiHijo: string = '';
+
+  public setEviomiHijo(value: any): void {
+    this.envioMiHijo = value;
+  }
 
   protected Empleados: creaEmpleados[] = [
     new creaEmpleados('Prueba', 'Prueba', 'Prueba', 5758250),
