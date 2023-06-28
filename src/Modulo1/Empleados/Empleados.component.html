@@ -1,0 +1,40 @@
+<div class="container2">
+  <ul>
+    <li *ngFor="let item of Empleados; let i = index">
+      {{ i + 1 }}: {{ item.get("nombre") }} {{ item.get("apellido") }}
+      {{ item.get("cargo") }} ${{ item.get("sueldo") }}
+    </li>
+  </ul>
+  <form action="#">
+    <div class="inputs">
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Nombre"
+        [(ngModel)]="nombre"
+      />
+      <input
+        type="text"
+        name="apellido"
+        placeholder="Apellido"
+        [(ngModel)]="apellido"
+      />
+      <input type="text" name="cargo" placeholder="Cargo" [(ngModel)]="cargo" />
+      <input
+        type="number"
+        name="sueldo"
+        placeholder="Sueldo"
+        [(ngModel)]="sueldo"
+      />
+    </div>
+    <input
+      type="submit"
+      name="agregar"
+      id="input"
+      value=" Agregar"
+      (click)="agregaEmpleado()"
+    />
+    <p *ngIf="numEmpleados > 9; else elElse">Numero de empleados al maximo</p>
+    <ng-template #elElse>Cupos Disponibles</ng-template>
+  </form>
+</div>
