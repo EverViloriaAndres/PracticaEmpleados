@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { creaEmpleados } from './Empleados.CREAR.component';
+import { PrimerServicioService } from '../primer-servicio.service';
 
 @Component({
   selector: 'ComponentePrincipal',
@@ -12,7 +13,12 @@ export class ComponentePrincipal {
   protected cargo: string = '';
   protected sueldo: number = 0;
   protected numEmpleados: number = 4;
-  envioMiHijo: string = '';
+  envioMiHijo: string =
+    ''; /*Usada para recivir el mensaje que viene con la direciva @output y el emisor de eventos*/
+
+  constructor(
+    protected primerServicio: PrimerServicioService
+  ) {} /**Inyeccion del servicio */
 
   public setEviomiHijo(value: any): void {
     this.envioMiHijo = value;
@@ -32,6 +38,7 @@ export class ComponentePrincipal {
       this.apellido.length > 0 &&
       this.cargo.length > 0
     ) {
+      this.primerServicio.metodoDelServicio('MensajeServicio: ' + this.nombre);
       this.Empleados.push(
         new creaEmpleados(this.nombre, this.apellido, this.cargo, this.sueldo)
       );
